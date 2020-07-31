@@ -5,12 +5,12 @@
 </p>
 
 # Índice
-·Introducción
-·Objetivo
-·Funcionalidades añádidas
-·Diseño
-·Cómo probar el programa
-·Conclusiones
+* Introducción
+* Objetivo
+* Funcionalidades añádidas
+* Diseño de la base de datos
+* Cómo probar el programa
+* Conclusiones
 
 ## Introducción
 
@@ -42,6 +42,7 @@ El ícono correspondiente al producto se muestra en la parte inferior, dónde se
 
 
 ## Funcionalidades extras añadidas
+
 ### 1-
 Cuando los clientes se disponen a pagar la cuenta, el trabajador pulsa el botón verde de expender ticket de la ventana anterior para acceder a la  ventana de Proceso de pago, en ella aparece resumido todos los datos generados por los clientes con un desglose de la cantidad a pagar.
 <p align="center">
@@ -70,7 +71,7 @@ En la pestaña historial, los empleados pueden consultar las comandas expendidas
 Otra función incorporada es la de que, si el empleado es administrador, puede volver tantas veces quiera a la zona administrador pulsando el botón
 de la barra de información. Al pasar a la vista administrador, las comandas abiertas se almacenan en la sesión de empleados  haciéndolas accesibles cuando el encargado vuelva a la ventana de Zona empleados.  Para evitar perdida de información, desde la zona empleados, nos pedirá una  segunda confirmación en el caso de que se cierre la ventana con comandas aún abiertas. Lo mismo sucederá si desde administrador se ha accedido a la zona de empleados.
 
-#Diseño de la base de datos
+# Diseño de la base de datos
 
 <p align="center">
   <img src="img/7.png"  title="Entidad relación de la base de datos">
