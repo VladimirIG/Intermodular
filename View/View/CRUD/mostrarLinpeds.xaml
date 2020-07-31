@@ -1,0 +1,43 @@
+﻿<Window x:Class="View.CRUD.mostrarLinpeds"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View.CRUD"
+        mc:Ignorable="d"
+        Title="Lineas de pedido" Height="550" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="../IMG/icons/logo.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../IMG/backgrounds/wood.jpg" Opacity="0.2"></ImageBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="1.1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Row="0">
+            <Label Content="Mostrando el pedido:" DockPanel.Dock="Left" VerticalContentAlignment="Center" FontFamily="Kalinga" FontSize="15" FontWeight="Bold" Margin="17,0,0,0" />
+            <Label Content="#0" Name="lbl_IDpedido" DockPanel.Dock="Right" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Kalinga" FontSize="25" FontWeight="Bold" Margin="0,0,17,0" />
+        </DockPanel>
+
+        <ListView  Grid.Row="1" x:Name="list_Linpeds" Margin="15,0" ScrollViewer.CanContentScroll="True">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Cnt"        Width="30px" DisplayMemberBinding = "{Binding Path = Linped.cantidad}" />
+                    <GridViewColumn Header="Producto"   Width="120px" DisplayMemberBinding = "{Binding Path = Producto.nombre}" />
+                    <GridViewColumn Header="P. Ud"      Width="40px" DisplayMemberBinding = "{Binding Path = Producto.precio}" />
+                    <GridViewColumn Header="Precio"     Width="60px" DisplayMemberBinding = "{Binding Path = Linped.importe}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <DockPanel  HorizontalAlignment="Center" Grid.Row="2" Margin="0,20,0,20">
+            <Button Content="Salir"  Name="bnt_Salir" Width="90px"  DockPanel.Dock="Right"   Background="#FFFFACAD" FontFamily="Mangal" Click="Bnt_Salir_Click" />
+        </DockPanel>
+    </Grid>
+</Window>

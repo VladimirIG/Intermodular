@@ -1,0 +1,53 @@
+﻿<Window x:Class="View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="Login" Height="370" Width="460" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="IMG/icons/logo.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush TileMode="Tile" ImageSource="IMG/backgrounds/veganicidad.jpg" Stretch="None" />
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="La ensalada con gracia" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+               FontSize="32" FontFamily="Kalinga"  HorizontalContentAlignment="Center" Background="#FFC6FBBE" Foreground="#f05053" BorderBrush="#FF99DC8F" BorderThickness="5px" FontWeight="Bold" />
+
+        <Image Source="./IMG/Icons/logo.png"  Grid.Row="1" Grid.Column="1" Margin="0,0,10,0" />
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Background="#FFFCFDF3">
+            <Label Content="Usuario:" />
+            <TextBox Name ="txt_Usuario" Margin="20,0,20,5" TabIndex="0" />
+            <Label Content="Contraseña:" />
+            <PasswordBox Name ="pass_Usuario"  Margin="20,0,20,5" KeyDown="pass_Usuario_KeyDown" TabIndex="1" />
+
+            <DockPanel  HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="0,20,0,20">
+                <Button Content="Aceptar" Width="90px" Name="btn_aceptar"  DockPanel.Dock="Left"  Margin="0,0,10,0" Background="#FFCBFD7F" FontFamily="Mangal" Click="btn_aceptar_Click" TabIndex="2" />
+                <Button Content="Salir"   Width="90px" Name="btn_salir"     DockPanel.Dock="Right"  Margin="10,0,0,0" Background="#FFFFACAD" FontFamily="Mangal" Click="btn_salir_Click" TabIndex="3" />
+            </DockPanel>
+
+            <Label Content="Tiene 3 Intentos." Name="lbl_intentos" Grid.Column="1"  Margin="0,0,0,10"  VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" FontFamily="Mangal" />
+        </StackPanel>
+        <DockPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+            <Button Name="btn_Config" Background="#FFD0FDFF" Click="btn_Config_Click">
+                <Image Source="img/icons/config.png"/>
+            </Button>
+            <Label Content="Version 1.12"   FontSize="10" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"
+                   Background="#FFF0BC5C" BorderBrush="#FFCF952C" BorderThickness="2px" />
+        </DockPanel>
+    </Grid>
+</Window>

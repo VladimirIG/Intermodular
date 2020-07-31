@@ -1,0 +1,73 @@
+﻿<Window x:Class="View.EmpleadoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="Zona empleados" MinHeight="500" MinWidth="800"  Height="500" Width="800" Closing="Window_Closing" WindowStartupLocation="CenterScreen" Icon="IMG/icons/logo.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="IMG/backgrounds/veganicidad.jpg" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" MinWidth="200px" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.4*" />
+            <RowDefinition Height="12*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Background="#FFC6FBBE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="./IMG/icons/logo.png" Margin="5" />
+
+            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0">
+                <Label Content="Empleado: " />
+                <Label Name="lbl_Empleado" Content="" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+                <Label Name="lbl_Hora" Content="" />
+                <Label Name="lbl_Fecha" Content="" />
+            </StackPanel>
+
+            <Button Grid.Column="3" Name="btn_PasarAadmin" Background="#FFF1F18F" HorizontalAlignment="Right" Click="btn_PasarAadmin_Click">
+                <Image Source="./img/icons/admin.png" />
+            </Button>
+        </Grid>
+
+        <TabControl Grid.Row="1" Opacity="0.9">
+            <TabControl.Background>
+                <SolidColorBrush Color="#FFFCFDF3" Opacity="0.8" />
+            </TabControl.Background>
+
+            <TabItem Height="50px" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <TabItem.Header>
+                    <StackPanel>
+                        <Image Source="/IMG/icons/mesas.png"  Width="50" />
+                    </StackPanel>
+                </TabItem.Header>
+
+                <Frame MinHeight="300" MinWidth="700" x:Name="page_GestorMesa" />
+            </TabItem>
+
+            <TabItem  Height="50px">
+                <TabItem.Header>
+                    <StackPanel>
+                        <Image Source="/IMG/icons/historial.png"  Width="50" />
+                    </StackPanel>
+                </TabItem.Header>
+
+                <Frame x:Name="page_Historial" />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

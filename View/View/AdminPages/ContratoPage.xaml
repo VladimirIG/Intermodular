@@ -1,0 +1,71 @@
+﻿<Page x:Class="View.AdminPages.ContratoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:View.AdminPages"
+      mc:Ignorable="d"
+
+      Title="ContratoPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <ListView x:Name="list_Contratos" Grid.Row="0"  MinHeight="250" Margin="10" Width="Auto">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Numero" Width="Auto"                  DisplayMemberBinding="{Binding Path=numero}" />
+                        <GridViewColumn Header="Numero SS" Width="Auto"               DisplayMemberBinding="{Binding Path=numero_ss}" />
+                        <GridViewColumn Header="Comienza" Width="Auto"                DisplayMemberBinding="{Binding Path=comienza}" />
+                        <GridViewColumn Header="Finaliza" Width="Auto"                DisplayMemberBinding="{Binding Path=finaliza}" />
+                        <GridViewColumn Header="H/Semana" Width="Auto"                DisplayMemberBinding="{Binding Path=horas_semana}" />
+                        <GridViewColumn Header="Tipo" Width="Auto"                    DisplayMemberBinding="{Binding Path=tipo}" />
+                        <GridViewColumn Header="DNI Empleado" Width="Auto"            DisplayMemberBinding="{Binding Path=dni_empleado}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ScrollViewer>
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="100, 10" MaxHeight="100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btn_ContratoListar" Grid.Column="0" Margin="5" Background="#FF0A9C9C" Click="btn_ContratoListar_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Listar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_ContratoMostrar" Grid.Column="1" Grid.Row="0"  Margin="5" Background="#FF0A9C9C" Click="btn_ContratoMostrar_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Mostrar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_ContratoAnyadir" Grid.Column="2"  Margin="5" Background="#FF0A9C9C" Click="btn_ContratoAnyadir_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Añadir" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_ContratoActualizar" Grid.Column="3" Margin="5" Background="#FF0A9C9C" Click="btn_ContratoActualizar_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Actualizar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_ContratoEliminar" Grid.Column="4"  Margin="5" Background="#FF0A9C9C" Click="btn_ContratoEliminar_Click">
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Eliminar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

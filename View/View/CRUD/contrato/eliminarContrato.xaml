@@ -1,0 +1,32 @@
+﻿<Window x:Class="View.CRUD.contrato.eliminarContrato"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View.CRUD.contrato"
+        mc:Ignorable="d"
+         Title="Eliminar contrato" Height="220" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="../../IMG/icons/logo.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../../IMG/backgrounds/wood.jpg" Opacity="0.2"></ImageBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Content="Rellene los siguientes campos" Grid.Row="0" VerticalContentAlignment="Center" FontFamily="Kalinga" FontSize="15" FontWeight="Bold" />
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="10,0,10,0" Background="#FFFCFDF3">
+            <Label Content="Número del contrato:" />
+            <ComboBox Name="comb_Numero" SelectedIndex="0" Margin="20,0,20,5" />
+        </StackPanel>
+        <DockPanel  HorizontalAlignment="Center" Grid.Row="2" Margin="0,20,0,20">
+            <Button Content="Aceptar" Name="bnt_Aceptar" Width="90px" DockPanel.Dock="Left"  Margin="0,0,10,0"  Background="#FFCBFD7F" FontFamily="Mangal" Click="bnt_Aceptar_Click" />
+            <Button Content="Salir"  Name="bnt_Salir" Width="90px"  DockPanel.Dock="Right"  Margin="10,0,0,0"  Background="#FFFFACAD" FontFamily="Mangal" Click="bnt_Salir_Click" />
+        </DockPanel>
+    </Grid>
+</Window>

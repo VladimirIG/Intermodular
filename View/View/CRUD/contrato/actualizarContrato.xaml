@@ -1,0 +1,61 @@
+﻿<Window x:Class="View.CRUD.contrato.actualizarContrato"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View.CRUD.contrato"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+ Title="Actualizar contrato" Height="550" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="../../IMG/icons/logo.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../../IMG/backgrounds/wood.jpg" Opacity="0.2"></ImageBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="1.1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Rellene los siguientes campos" Grid.Row="0" VerticalContentAlignment="Center" FontFamily="Kalinga" FontSize="15" FontWeight="Bold" />
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="10,0,10,0" Background="#FFFCFDF3">
+            <Label Content="Número:" />
+            <ComboBox Name="comb_Numero" SelectedIndex="0" Margin="20,0,20,5" SelectionChanged="comb_Numero_SelectionChanged" />
+
+            <Label Content="Número Seguridad Social:" />
+            <TextBox Name="txt_NumSS" Margin="20,0,20,5" MaxLength="9" />
+
+            <Label Content="Comienzo:" />
+            <DatePicker Name="date_Comienza" Margin="20,0,20,5" />
+
+            <Label Content="Finalización:" />
+            <DatePicker Name="date_Finaliza" Margin="20,0,20,5" />
+
+            <Label Content="Horas a la semana:" />
+            <xctk:IntegerUpDown Name="updown_HorasSemana" Margin="160,0,160,5" Minimum="1" Maximum="72" Value="21" />
+
+            <Label Content="Tipo de contrato: " />
+            <ComboBox Name="comb_TipoContrato" SelectedIndex="0" Margin="20,0,20,5">
+                <ComboBoxItem Content="INDEFINIDO" />
+                <ComboBoxItem Content="TEMPORAL" />
+                <ComboBoxItem Content="PRACTICAS" />
+                <ComboBoxItem Content="OBRASERVICIO" />
+                <ComboBoxItem Content="EVENTUAL" />
+                <ComboBoxItem Content="RELEVO" />
+            </ComboBox>
+
+            <Label Content="DNI del empleado: " />
+            <ComboBox Name="comb_DNIempleado" SelectedIndex="0" Margin="20,0,20,5" />
+        </StackPanel>
+
+        <DockPanel  HorizontalAlignment="Center" Grid.Row="2" Margin="0,20,0,20">
+            <Button Content="Aceptar" Name="bnt_Aceptar" Width="90px" DockPanel.Dock="Left"  Margin="0,0,10,0"  Background="#FFCBFD7F" FontFamily="Mangal" Click="bnt_Aceptar_Click" />
+            <Button Content="Salir"  Name="bnt_Salir" Width="90px"  DockPanel.Dock="Right"  Margin="10,0,0,0"  Background="#FFFFACAD" FontFamily="Mangal" Click="bnt_Salir_Click" />
+        </DockPanel>
+    </Grid>
+</Window>

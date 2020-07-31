@@ -1,0 +1,69 @@
+﻿<Page x:Class="View.AdminPages.MesaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:View.AdminPages"
+      mc:Ignorable="d"
+
+      Title="MesaPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="list_Mesas" Grid.Row="0"  MinHeight="250" Margin="10" Width="Auto">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="Auto"                  DisplayMemberBinding="{Binding Path=id}" />
+                    <GridViewColumn Header="Zona" Width="Auto"                DisplayMemberBinding="{Binding Path=zona}" />
+                    <GridViewColumn Header="Núm sillas" Width="Auto"       DisplayMemberBinding="{Binding Path=n_sillas}" />
+                    <GridViewColumn Header="Activa" Width="Auto"            DisplayMemberBinding="{Binding Path=activa}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="100, 10" MaxHeight="100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btn_MesaListar" Grid.Column="0" Margin="5" Background="#FF0A9C9C" Click="btn_MesaListar_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Listar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_MesaMostrar" Grid.Column="1" Grid.Row="0"  Margin="5" Background="#FF0A9C9C" Click="btn_MesaMostrar_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Mostrar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_MesaAnyadir" Grid.Column="2"  Margin="5" Background="#FF0A9C9C" Click="btn_MesaAnyadir_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Añadir" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_MesaActualizar" Grid.Column="3" Margin="5" Background="#FF0A9C9C" Click="Btn_MesaActualizar_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Actualizar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_MesaEliminar" Grid.Column="4"  Margin="5" Background="#FF0A9C9C" Click="btn_MesaEliminar_Click">
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Eliminar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

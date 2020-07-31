@@ -1,0 +1,119 @@
+﻿<Window x:Class="View.Pago"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="Proceso de pago" Height="700" Width="550" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="IMG/icons/logo.png">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="5px" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="grid_Print">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="226*"/>
+                <RowDefinition Height="350*"/>
+                <RowDefinition Height="95*"/>
+            </Grid.RowDefinitions>
+            <StackPanel  Background="#FFC6FBBE">
+                <Label  Content="LA ENSALADA CON GRACIA"  Padding="0" FontSize="15" FontFamily="Kalinga"  HorizontalContentAlignment="Center"
+                            Background="#FFC6FBBE" Foreground="#FFF17208" BorderThickness="3px" FontWeight="Bold" />
+                <Image Source="img/icons/logo.png" Width="60"  Height="40" />
+                <Label Content="DATOS DEL PEDIDO" HorizontalAlignment="Center" FontFamily="Candara" FontWeight="Bold" FontSize="15" />
+                <Separator Width="200" />
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Left"  Margin="10,0,0,0">
+                        <Label Content="Le atendió: " FontSize="12" Padding="2" />
+                        <Label Content="Telef: " FontSize="12" Padding="2" />
+                        <Label Content="Mesa: " FontSize="12" Padding="2" />
+                        <Label Content="Comensales: " FontSize="12" Padding="2" />
+                        <Label Content="Fecha: " FontSize="12" Padding="2" />
+                        <Label Content="Ticket: " FontSize="12" Padding="2" />
+                    </StackPanel>
+                    <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <Label Name="lbl_Empleado" Content="Empleado" FontSize="12" Padding="2" HorizontalAlignment="Right" />
+                        <Label Content="966881645" FontSize="12" Padding="2"  HorizontalAlignment="Right" />
+                        <Label Name="lbl_Mesa" Content="Mesa" FontSize="12" Padding="2"  HorizontalAlignment="Right" />
+                        <Label Name="lbl_Comensales" Content="0" FontSize="12" Padding="2"  HorizontalAlignment="Right" />
+                        <Label Name="lbl_Fecha" Content="Fecha" FontSize="12" Padding="2"  HorizontalAlignment="Right" />
+                        <Label Name="lbl_Ticket" Content="Ticket" FontSize="12" Padding="2"  HorizontalAlignment="Right" />
+                    </StackPanel>
+                </DockPanel>
+            </StackPanel>
+
+
+            <ListView  Grid.Row="1" x:Name="list_Linpeds" ScrollViewer.CanContentScroll="True">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Cnt"        Width="30px" DisplayMemberBinding = "{Binding Path = Linped.cantidad}" />
+                        <GridViewColumn Header="Producto"   Width="120px" DisplayMemberBinding = "{Binding Path = Producto.nombre}" />
+                        <GridViewColumn Header="P. Ud"      Width="40px" DisplayMemberBinding = "{Binding Path = Producto.precio}" />
+                        <GridViewColumn Header="Precio"     Width="60px" DisplayMemberBinding = "{Binding Path = Linped.importe}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <DockPanel DockPanel.Dock="Bottom" Grid.Column="0" Grid.Row="2" Background="#FFC6FBBE">
+                <StackPanel DockPanel.Dock="Left"  Margin="5,0,0,0">
+                    <Label Content="Total sin IVA: " FontSize="14px" Padding="2" />
+                    <Label Content="IVA 10%" FontSize="14px" Padding="2" />
+                    <Label Content="Total + IVA 10%" FontSize="14px" Padding="2" />
+                    <Label Content="Total por comensal" FontSize="14px" Padding="2" />
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="0,0,5,0">
+                    <Label Name="lbl_SinIva" Content="0" FontSize="14px" Padding="2" HorizontalAlignment="Right" />
+                    <Label Name="lbl_Iva" Content="0" FontSize="14px" Padding="2"  HorizontalAlignment="Right" />
+                    <Label Name="lbl_Con" Content="0" FontSize="14px" Padding="2"  HorizontalAlignment="Right" />
+                    <Label Name="lbl_PorComen" Content="0" FontSize="14px" Padding="2"  HorizontalAlignment="Right" />
+                </StackPanel>
+            </DockPanel>
+        </Grid>
+
+        <Border Grid.Column="1" Grid.RowSpan="3" Background="#FFFBB34C" />
+
+        <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Background="#FFD0FDFF">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="115*" />
+                <RowDefinition Height="422*" />
+                <RowDefinition Height="134*" />
+                <RowDefinition Height="134*" />
+            </Grid.RowDefinitions>
+
+            <DockPanel>
+                <Label Content="Formas de pago:" FontSize="15" FontStyle="Italic" DockPanel.Dock="Top" Margin="15,5" Foreground="#FFF17208" />
+                <Label Content="Cantidad a pagar: " FontSize="15" Padding="2" Margin="4,0" />
+                <Label Name="lbl_Apagar" Content="0€" FontSize="35" Padding="2" Margin="4,0" HorizontalAlignment="Right" />
+            </DockPanel>
+            <DockPanel Grid.Row="1">
+                <DockPanel Margin="0,15" DockPanel.Dock="Top">
+                    <RadioButton x:Name = "rdb_efectivo"  GroupName = "formaPago"  DockPanel.Dock="Top"
+                         Content = "Efectivo" FontSize="15" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="10, 10, 10,15" Checked="rdb_efectivo_Checked" />
+                    <StackPanel DockPanel.Dock="Left"  Margin="10,0,0,0">
+                        <Label Content="Cantidad recibida: " FontSize="15" Padding="2" />
+                    </StackPanel>
+
+                    <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <TextBox  Name="txt_Recibido" Padding="2" FontSize="15"  Width="65" Height="25"  HorizontalAlignment="Right" HorizontalContentAlignment="Right" />
+                    </StackPanel>
+                </DockPanel>
+                <DockPanel Margin="0,50" DockPanel.Dock="Top">
+                    <RadioButton x:Name = "rdb_tarjeta" GroupName = "formaPago"  Content = "Tarjeta" FontSize="15" DockPanel.Dock="Top" Margin="10, 10, 10,15"
+                         VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="150" Checked="rdb_tarjeta_Checked" />
+                    <Label Content="Número de tarjeta:" FontSize="15" Padding="12,0" DockPanel.Dock="Top" />
+                    <TextBox Name="txt_NumTarjeta" Margin="10" FontSize="15"  DockPanel.Dock="Bottom" MaxLength="16" Height="28" HorizontalContentAlignment="Center" />
+                </DockPanel>
+            </DockPanel>
+
+            <Button Grid.Row="2" Content="Pagar" x:Name="btn_Pagar" FontSize="30px" Foreground="#f05053" Background="#FFC6FBBE"
+               Margin="8" FontFamily="Source Serif Pro Black" Click="btn_Pagar_Click" />
+
+            <Button Content="VOLVER" Name="btn_Volver" Grid.Row="4" FontSize="15px"
+                        Foreground="White" Background="#FFF17208" VerticalAlignment="Center" Margin="10, 25" Height="50" FontFamily="Source Serif Pro Black" Click="btn_Volver_Click" />
+        </Grid>
+    </Grid>
+</Window>

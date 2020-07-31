@@ -1,0 +1,71 @@
+﻿<Page x:Class="View.AdminPages.ProductoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:View.AdminPages"
+      mc:Ignorable="d"
+
+      Title="ProductoPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+            <ListView x:Name="list_Productos" Grid.Row="0"  MinHeight="250" Margin="10" Width="Auto" ScrollViewer.CanContentScroll="True">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Codigo"             Width="Auto"    DisplayMemberBinding="{Binding Path=codigo}" />
+                        <GridViewColumn Header="Nombre"             Width="Auto"    DisplayMemberBinding="{Binding Path=nombre}" />
+                        <GridViewColumn Header="Categoria"          Width="Auto"    DisplayMemberBinding="{Binding Path=categoria}" />
+                        <GridViewColumn Header="Especificaciones"   Width="Auto"    DisplayMemberBinding="{Binding Path=especificaciones}" />
+                        <GridViewColumn Header="Precio"             Width="Auto"    DisplayMemberBinding="{Binding Path=precio}" />
+                        <GridViewColumn Header="Activo"             Width="Auto"    DisplayMemberBinding="{Binding Path=activo}" />
+                        <GridViewColumn Header="Imagen"             Width="Auto"    DisplayMemberBinding="{Binding Path=imagen}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="100, 10" MaxHeight="100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btn_ProductoListar" Grid.Column="0" Margin="5" Background="#FF0A9C9C" Click="btn_ProductoListar_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Listar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+
+            <Button Name="btn_ProductoMostrar" Grid.Column="1" Grid.Row="0"  Margin="5" Background="#FF0A9C9C" Click="btn_ProductoMostrar_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Mostrar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_ProductoAnyadir" Grid.Column="2"  Margin="5" Background="#FF0A9C9C" Click="btn_ProductoAnyadir_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Añadir" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button Name="btn_ProductoActualizar" Grid.Column="3" Margin="5" Background="#FF0A9C9C" Click="btn_ProductoActualizar_Click">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Actualizar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+
+            <Button Name="btn_ProductoEliminar" Grid.Column="4"  Margin="5" Background="#FF0A9C9C" Click="btn_ProductoEliminar_Click">
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Eliminar" FontFamily="Mangal" Foreground="White" />
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
