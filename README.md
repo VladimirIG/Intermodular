@@ -67,6 +67,7 @@ En la pestaña historial, los empleados pueden consultar las comandas expendidas
 <p align="center">
   <img src="img/6.png"  title="Apartado historial">
 </p>
+
 ### 4-
 Otra función incorporada es la de que, si el empleado es administrador, puede volver tantas veces quiera a la zona administrador pulsando el botón
 de la barra de información. Al pasar a la vista administrador, las comandas abiertas se almacenan en la sesión de empleados  haciéndolas accesibles cuando el encargado vuelva a la ventana de Zona empleados.  Para evitar perdida de información, desde la zona empleados, nos pedirá una  segunda confirmación en el caso de que se cierre la ventana con comandas aún abiertas. Lo mismo sucederá si desde administrador se ha accedido a la zona de empleados.
