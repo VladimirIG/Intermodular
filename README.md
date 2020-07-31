@@ -4,6 +4,13 @@
   <img src="img/0.png"  title="Portada">
 </p>
 
+#Índice
+·Introducción
+·Objetivo
+·Funcionalidades añádidas
+·Diseño
+·Cómo probar el programa
+·Conclusiones
 
 ##Introducción
 
@@ -63,7 +70,8 @@ En la pestaña historial, los empleados pueden consultar las comandas expendidas
 Otra función incorporada es la de que, si el empleado es administrador, puede volver tantas veces quiera a la zona administrador pulsando el botón
 de la barra de información. Al pasar a la vista administrador, las comandas abiertas se almacenan en la sesión de empleados  haciéndolas accesibles cuando el encargado vuelva a la ventana de Zona empleados.  Para evitar perdida de información, desde la zona empleados, nos pedirá una  segunda confirmación en el caso de que se cierre la ventana con comandas aún abiertas. Lo mismo sucederá si desde administrador se ha accedido a la zona de empleados.
 
-#Modelo de la base de datos
+#Diseño de la base de datos
+
 <p align="center">
   <img src="img/7.png"  title="Entidad relación de la base de datos">
 </p>
@@ -71,7 +79,39 @@ de la barra de información. Al pasar a la vista administrador, las comandas abi
 <p align="center">
   <img src="img/8.png"  title="Modelo lógico de la base de datos">
 </p>
+
+#Cómo probar el programa
+El proyecto de Visual Studio está divido en 3 subproyectos: Controller (Biblioteca de clases), Model(NodeJS 12.18.3 LTS) y View(WPF con NET.Framework 4.7.2).
+
+Para este proyecto se utilizó MariaDB (https://mariadb.org) con la siguiente configuración:
+```console
+    user: "root",
+    password: "admin",
+    host: "localhost",
+    port: "3306",
+    database: "intermodular"
+``` 
+Una vez descargado el repositorio, en la carpeta 'SQL script' encontraremos el diseño en el fichero DDL a consultar (Es necesario crear la base de datos "intermodular" manualmente) y algunas inserciones en el fichero DML para poblar la base de datos. 
+
+Será necesario instalar los módulos de la aplicación NodeJS, bastará con abrir una consola en la carpeta 'Model' que contiene el archivo app.js y ejecutar en una ventana de comandos:
+```console
+$ npm i
+```
+Una vez instalados los módulos necesarios, ejecutamos el servidor con:
+```console
+node app.js
+```
+o en linux
+```console
+nodejs app.js
+```
+
+Con el servidor en marcha configuramos Visual Studio para que inicie el proyecto "View", para ello en el apartado 'Explorador de soluciones', seleccionamos del menú contextual la opción de 'Establecer proyecto de inicio...' y marcamos como proyecto de inicio único "View".
+
+El último paso es iniciar la aplicacación, podemos acceder a esta con el usuario root de la aplicación es "A00000000" con contraseña "admin".
+
 #Conclusiones del proyecto
+
 En lo que respecta al funcionamiento de este, en un principio se concibió solo como un punto de cobro en el que el empleado, tras recibir la petición de pago por parte del cliente, introduciría los datos escritos en su bloc de comandas y efectuaría el cobro. Después de que lo requisitos mínimos del proyecto fuesen actualizados, se añadió a la lista de funcionalidades el que se pueda conservar pedidos abiertos y actualizables para todas las mesas con el fin de cumplir dicho requisito.
 
 <p align="center">
