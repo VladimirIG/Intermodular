@@ -1,10 +1,10 @@
-#La ensalada con gracia - TPV
+# La ensalada con gracia - TPV
 
 <p align="center">
   <img src="img/0.png"  title="Portada">
 </p>
 
-#Índice
+# Índice
 ·Introducción
 ·Objetivo
 ·Funcionalidades añádidas
@@ -12,11 +12,11 @@
 ·Cómo probar el programa
 ·Conclusiones
 
-##Introducción
+## Introducción
 
 Este proyecto es una solución informática para el ciclo formativo de desarrollo de aplicaciones multiplataformas del IES Pere Maria Orts & Bosch de Benidorm, en dicha solución se busca atender a las necesidades diarias de un restaurante en lo tocante a la gestión de pedidos que pueden tomar lugar en diferentes mesas a la vez y a la manipulación de los datos generados por esta interacción.
 
-##Objetivo
+## Objetivo
 
 Para ello se hace uso de tecnologías como NodeJs, XAML y MariaDB, junto a entornos de desarrollo como Visual Studio Community 2019, HeidiSQL y Visual Studio Code para crear las diferentes capas que componen el software.
 
@@ -41,8 +41,8 @@ Para añadir un producto al ticket el empleado navega por las pestañas de categ
 El ícono correspondiente al producto se muestra en la parte inferior, dónde se procederá a asignarle la cantidad a añadir al ticket. El usuario, a su vez, puede rectificar pulsando en el botón de “Eliminar seleccionado” o incluso vaciar todas las líneas presionando el botón de  impieza. Mientras el listado permanezca vació, la mesa aparecerá como libre. 
 
 
-##Funcionalidades extras añadidas
-###1-
+## Funcionalidades extras añadidas
+### 1-
 Cuando los clientes se disponen a pagar la cuenta, el trabajador pulsa el botón verde de expender ticket de la ventana anterior para acceder a la  ventana de Proceso de pago, en ella aparece resumido todos los datos generados por los clientes con un desglose de la cantidad a pagar.
 <p align="center">
   <img src="img/5.png"  title="Gestor de mesas">
@@ -50,7 +50,7 @@ Cuando los clientes se disponen a pagar la cuenta, el trabajador pulsa el botón
 
 El  cliente puede elegir pagar con efectivo o con tarjeta(no implementado), después del pago se abrirá una ventana informativa mostrando el vuelto.  
 
-###2-
+### 2-
 Al tratarse de un cliente para una base de datos, el programa ofrece la posibilidad de introducir la dirección http del servidor del restaurante desde la ventana de opciones. 
 <p align="center">
   <img src="img/5.1.png"  title="Login">
@@ -61,12 +61,12 @@ Al tratarse de un cliente para una base de datos, el programa ofrece la posibili
 
 Debido a que es una función que solo los usuarios más experimentados van utilizar, se dispuso el botón en una esquina para simplificar la vista  de la pantalla de Login.
 
-###3-
+### 3-
 En la pestaña historial, los empleados pueden consultar las comandas expendidas, si se seleccionan y se pulsa sobre el botón con el símbolo de un archivo, pueden consultar las líneas pedidos.
 <p align="center">
   <img src="img/6.png"  title="Apartado historial">
 </p>
-###4-
+### 4-
 Otra función incorporada es la de que, si el empleado es administrador, puede volver tantas veces quiera a la zona administrador pulsando el botón
 de la barra de información. Al pasar a la vista administrador, las comandas abiertas se almacenan en la sesión de empleados  haciéndolas accesibles cuando el encargado vuelva a la ventana de Zona empleados.  Para evitar perdida de información, desde la zona empleados, nos pedirá una  segunda confirmación en el caso de que se cierre la ventana con comandas aún abiertas. Lo mismo sucederá si desde administrador se ha accedido a la zona de empleados.
 
@@ -80,7 +80,7 @@ de la barra de información. Al pasar a la vista administrador, las comandas abi
   <img src="img/8.png"  title="Modelo lógico de la base de datos">
 </p>
 
-#Cómo probar el programa
+# Cómo probar el programa
 El proyecto de Visual Studio está divido en 3 subproyectos: Controller (Biblioteca de clases), Model(NodeJS 12.18.3 LTS) y View(WPF con NET.Framework 4.7.2).
 
 Para este proyecto se utilizó MariaDB (https://mariadb.org) con la siguiente configuración:
@@ -110,7 +110,7 @@ Con el servidor en marcha configuramos Visual Studio para que inicie el proyecto
 
 El último paso es iniciar la aplicacación, podemos acceder a esta con el usuario root de la aplicación es "A00000000" con contraseña "admin".
 
-#Conclusiones del proyecto
+# Conclusiones del proyecto
 
 En lo que respecta al funcionamiento de este, en un principio se concibió solo como un punto de cobro en el que el empleado, tras recibir la petición de pago por parte del cliente, introduciría los datos escritos en su bloc de comandas y efectuaría el cobro. Después de que lo requisitos mínimos del proyecto fuesen actualizados, se añadió a la lista de funcionalidades el que se pueda conservar pedidos abiertos y actualizables para todas las mesas con el fin de cumplir dicho requisito.
 
