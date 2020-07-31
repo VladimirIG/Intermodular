@@ -97,7 +97,7 @@ Una vez descargado el repositorio, en la carpeta 'SQL script' encontraremos el d
 
 Será necesario instalar los módulos de la aplicación NodeJS, bastará con abrir una consola en la carpeta 'Model' que contiene el archivo app.js y ejecutar en una ventana de comandos:
 ```console
-$ npm i
+npm i
 ```
 Una vez instalados los módulos necesarios, ejecutamos el servidor con:
 ```console
@@ -114,7 +114,8 @@ El último paso es iniciar la aplicacación, podemos acceder a esta con el usuar
 
 # Conclusiones del proyecto
 
-En lo que respecta al funcionamiento de este, en un principio se concibió solo como un punto de cobro en el que el empleado, tras recibir la petición de pago por parte del cliente, introduciría los datos escritos en su bloc de comandas y efectuaría el cobro. Después de que lo requisitos mínimos del proyecto fuesen actualizados, se añadió a la lista de funcionalidades el que se pueda conservar pedidos abiertos y actualizables para todas las mesas con el fin de cumplir dicho requisito.
+
+En lo que respecta al funcionamiento de este, en un principio se concibió solo como un punto de cobro en el que el empleado, tras recibir la petición de pago por parte del cliente, introduciría los datos escritos en su bloc de comandas y efectuaría el cobro. Después de que lo requisitos mínimos del proyecto fuesen actualizados, se añadió a la lista de funcionalidades el que se pueda conservar pedidos abiertos y actualizables para todas las mesas con el fin de cumplir dicho requisito. Otra de las exigencias fue la de separar el programa en MVC, algo que se ha intenado hacer teniendo en cuenta que XAML fue creado bajo el patrón MVVM.
 
 <p align="center">
   <img src="img/9.png"  title="Modelo lógico de la base de datos">
